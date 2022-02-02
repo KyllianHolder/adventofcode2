@@ -1,0 +1,15 @@
+with open("input.txt", "r") as f:
+    data = f.read()
+    formatted_data = str.splitlines(data)
+    horinzontal_pos = 0
+    vertical_pos = 0
+    for row in formatted_data:
+        guiding = row.split()
+        if(guiding[0] == "down"):
+            vertical_pos = vertical_pos + int(guiding[1])
+        elif(guiding[0]== "up"):
+            vertical_pos = vertical_pos - int(guiding[1])
+        elif(guiding[0] == "forward"):
+            horinzontal_pos = horinzontal_pos + int(guiding[1])
+    final_pos = horinzontal_pos * vertical_pos
+    print(final_pos)
